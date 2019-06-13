@@ -24,7 +24,7 @@ gem 'ejs'
 gem 'active_model_serializers', '~> 0.8.0'
 
 # UI
-gem 'bootstrap-sass', '~> 3.3'
+gem 'bootstrap-sass', '~> 3.4'
 gem "handles_sortable_columns", git: "https://github.com/dgreene53/handles_sortable_columns.git", ref: "rails-5"
 gem "scrollbar-rails"
 
@@ -72,7 +72,6 @@ gem "rollbar"
 
 gem "will_paginate", '~> 3.1.7'
 gem "activerecord-import", ">= 0.25.0"
-gem 'sanitize'
 gem "ancestry"
 gem "friendly_id", "~> 5.0.4"
 gem 'activerecord-postgresql-adapter'
