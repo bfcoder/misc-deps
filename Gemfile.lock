@@ -91,9 +91,9 @@ GEM
     bindex (0.7.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     brakeman (4.5.1)
     browser (2.5.3)
     builder (3.2.3)
@@ -505,7 +505,7 @@ DEPENDENCIES
   ancestry
   aws-sdk (~> 1.67)
   bootsnap
-  bootstrap-sass (~> 3.3.7)
+  bootstrap-sass (~> 3.4)
   brakeman
   browser
   bullet
