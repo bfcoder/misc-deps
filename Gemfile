@@ -24,7 +24,7 @@ gem 'ejs'
 gem 'active_model_serializers', '~> 0.8.0'
 
 # UI
-gem 'bootstrap-sass', '~> 3.4'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem "handles_sortable_columns", git: "https://github.com/dgreene53/handles_sortable_columns.git", ref: "rails-5"
 gem "scrollbar-rails"
 
