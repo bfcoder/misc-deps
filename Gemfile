@@ -28,7 +28,7 @@ gem 'image_processing', '~> 1.2'
 gem 'active_storage_validations'
 
 # UI
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'font-awesome-sass'
 gem "handles_sortable_columns", git: "https://github.com/dgreene53/handles_sortable_columns.git", ref: "rails-5"
 gem "scrollbar-rails"
