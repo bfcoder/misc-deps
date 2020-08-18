@@ -41,13 +41,13 @@ gem 'unicorn'
 gem "turnout"
 
 # Users
-gem "devise", ">= 3.2.4"
+gem "devise", "~> 4.7.1"
 gem 'cancancan', '>= 1.9'
 gem "rolify", "~> 5.2.0"
-gem "simple_form", ">= 3.1.0"
+gem "simple_form", "~> 5.0.2"
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'devise_masquerade'
-gem 'devise_invitable', '2.0.1'
+gem 'devise_invitable', '~> 2.0.2'
 
 #React
 gem 'react-rails'
