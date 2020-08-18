@@ -4,7 +4,7 @@
 source 'https://rubygems.org'
 ruby "~>2.5"
 
-gem 'rails', '5.2.3'
+gem 'rails', '5.2.4.3'
 gem 'pg'
 gem "composite_primary_keys", "~> 11.0" # For que worker
 
