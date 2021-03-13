@@ -1,102 +1,74 @@
-# If bundler starts to act up run these commands to start over and clean up:
-# rm -rf ~/.bundle/ ~/.gem/; rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/; rm -rf .bundle/; rm -rf vendor/cache/; rm -rf Gemfile.lock
-# rvm gemset empty WebbCity
-# bundle install
-ruby '2.5.7'
-
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.8'
-gem 'rb-readline'
+gem 'rails', '~> 5.2.0'
 
-# Database
-gem "pg"
+gem 'webpacker', '~> 5.x'
 
-# UI
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
-gem 'bootstrap-sass'
-gem 'font_assets', github: 'atomicjolt/font_assets' # sets headers and mimetypes for fonts in the asset pipeline
-gem 'autoprefixer-rails'
-gem 'non-stupid-digest-assets' # also compile assets without digest (fixes font problem)
-gem "bower-rails"
+# Improve boot time
+gem "bootsnap", require: false
 
-# authentication, authorization, integrations
+gem 'tiny_tds'
+gem 'activerecord-sqlserver-adapter', '~> 5.2.0'
+
+gem 'acts_as_list'
+
+# Use SCSS for stylesheets
+gem "sassc-rails"
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+#gem 'turbolinks'
+
+# Pdfs
+gem "prawn"
+gem "prawn_rails"
+
 gem 'devise'
-gem 'omniauth', '~> 1.2.2'
-gem 'omniauth-canvas', '~> 0.1.0' #, :path => '~/projects/omniauth-canvas'
-gem 'oauth', '~> 0.4.7'
-gem 'ims-lti'
-gem 'cancancan'
-gem 'rolify'
-gem 'attr_encrypted', '~> 3.0.0'
-gem 'jwt', '~> 1.5.0' # json web token
 
-# Email
-gem 'sendgrid'
+gem 'rmagick', :require => false
 
-# JSON parser
-gem 'yajl-ruby', require: 'yajl'
-
-# deployment
-gem 'unicorn'
-gem 'unicorn-rails'
-gem 'rollbar'
-
-# Used for deploying to Heroku. Can be removed if not deploying to Heroku.
-gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
-
-# API Related
-gem 'httparty', '~> 0.13.5'
-gem 'rack-cors', :require => 'rack/cors'
-
-# Paging
-gem 'will_paginate', '~> 3.0.6'
-
-# File Uploads
 gem 'paperclip'
-gem 'rubyXL'
+
+gem 'mms2r', '~> 3.9.2'
+gem "mail-fetcher", git: "https://github.com/arrowhead/fetcher.git", require: "fetcher"
+
+gem 'health_check'
+
+gem "will_paginate", "~> 3.1"
+
+gem 'rails_admin', '~> 2.0'
+
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier'
+
+# Google V8 for execjs to use
+gem "therubyracer"
 
 group :development do
-  gem 'spring'
-  gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
-  gem 'guard-bundler', '2.1.0'
-  gem 'guard-rails', '0.7.2'
-  gem 'guard-rspec', '4.6.4'
-  gem 'hub', :require=>nil
-  gem 'mail_view'
-  gem 'mailcatcher'
-  gem 'quiet_assets'
-  gem 'rails_apps_pages'
-  gem 'rails_apps_testing'
-  gem 'rails_layout'
-  gem 'rb-fchange', :require=>false
-  gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
-  gem 'nokogiri'
+  gem 'byebug'
+  gem 'bullet'
+  gem "rubocop"
+
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '~> 3.0.5'
 end
 
-group :development, :test do
-  gem 'dotenv-rails'
-  gem 'byebug'
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'rspec-rails'
+group :development do
+  gem 'capistrano', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-shell', require: false
+  gem 'capistrano-logtail', require: false
+  gem 'capistrano-upload', require: false
+  gem 'capistrano-passenger', require: false
+
+  # ed25519 ssh key support for deploying
+  gem "bcrypt_pbkdf"
+  gem "ed25519"
 end
 
 group :test do
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'launchy'
-  gem 'selenium-webdriver'
-  gem 'shoulda-matchers', require: false
-  gem 'webmock'
-  gem 'vcr'
-end
-
-group :production do
-  gem 'rails_12factor'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'sqlite3'
 end
