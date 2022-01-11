@@ -46,7 +46,7 @@ gem "turnout"
 # Users
 gem "devise", "~> 4.7.1"
 gem 'cancancan', '>= 1.9'
-gem "rolify", "~> 5.2.0"
+gem "rolify", "~> 6.0.0"
 gem "simple_form", "~> 5.0.2"
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'devise_masquerade'
@@ -130,6 +130,7 @@ group :development, :test do
   gem 'pry'
   gem 'stripe-ruby-mock', '~> 2.5.3', require: 'stripe_mock'
   gem 'shoulda-matchers'
+  gem "dotenv-rails"
 end
 
 group :test do
