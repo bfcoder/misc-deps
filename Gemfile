@@ -2,9 +2,9 @@
 # rm -rf ~/.bundle/ ~/.gem/; rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/; rm -rf .bundle/; rm -rf vendor/cache/; rm -rf Gemfile.lock
 
 source 'https://rubygems.org'
-ruby "~>2.5"
+ruby "~>2.7"
 
-gem 'rails', '5.2.4.3'
+gem 'rails', '5.2.6'
 gem 'pg'
 gem "composite_primary_keys", "~> 11.0" # For que worker
 
