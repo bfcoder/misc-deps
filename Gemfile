@@ -178,5 +178,5 @@ end
 gem 'jbuilder', '~> 2.0'
 gem 'tinymce-rails'
 gem 'browser'
-gem 'nokogiri', '~> 1.10.3'
+gem 'nokogiri', '~> 1.12.5'
 gem 'rubyzip'
