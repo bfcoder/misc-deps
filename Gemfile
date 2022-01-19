@@ -92,6 +92,7 @@ gem 'newrelic_rpm'
 
 # 3rd party login and integration
 gem 'omniauth', '~> 1.3'
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-stripe-connect', "~> 2.10"
 gem 'twilio-ruby'
 
