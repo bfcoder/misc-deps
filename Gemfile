@@ -1,144 +1,181 @@
-# If bundler starts to act up run these commands to start over and clean up:
+# clean up:
 # rm -rf ~/.bundle/ ~/.gem/; rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/; rm -rf .bundle/; rm -rf vendor/cache/; rm -rf Gemfile.lock
-# rvm gemset empty Adhesion
-# bundle install
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
+ruby "~>2.7"
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+gem 'rails', '6.1.4.6'
+gem 'pg'
+gem "composite_primary_keys", "~> 13.0" # For que worker
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "5.2.6"
+# memcached
+gem 'dalli', git: "https://github.com/petergoldstein/dalli", ref: "ca8b286"
 
-# Improve boot time
-gem "bootsnap", require: false
+# PostGreSQL full text search
+gem 'pg_search'
 
-# Database
-gem "apartment"
-gem "composite_primary_keys"
-gem "pg"
-
-# authentication, authorization, integrations
-gem "attr_encrypted"
-gem "cancancan"
-gem "devise"
-gem "devise_invitable"
-gem "strong_password"
-gem "ims-lti", "~> 2.1.5" # IMS LTI tool consumers and providers
-gem "aj-ims-lti", "~> 1.2.0"
-gem "json-jwt"
-gem "jwt"
-gem "lms-api", "~>1.12.0"
-gem "lms-graphql-api", ">=0.5.3"
-gem "omniauth"
-gem "omniauth-canvas", "~>1.0.2"
-gem "rolify"
-
-# Email
-gem "sendgrid"
-
-# JSON parser
-gem "yajl-ruby", require: "yajl"
-
-# server
-gem "puma"
-
-# job worker
-gem "apartment-activejob-que"
-gem "que"
-
-# API Related
-gem "rack-cors", require: "rack/cors"
-gem "rest-client"
-
-# Paging
-gem "will_paginate"
-
-# Doc Viewer
-gem "libreconv"
+# Pdfs
+gem "pdfkit", "~> 0.8.4"
+gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 # Javascript
-gem "webpacker"
+gem 'jquery-rails'
+gem "jquery-ui-rails"
+gem "jquery-fileupload-rails"
 
-# Application secrets checker
-gem "nuclear_secrets"
+gem 'ejs'
 
-# This is only here because we are on ruby 2.4. When we upgrade ruby we can remove this
-gem "sprockets", "~>3.7.2"
+gem 'active_model_serializers', '~> 0.8.0'
+gem 'active_storage_base64'
+gem 'image_processing', '~> 1.2'
+gem 'active_storage_validations'
 
-gem "graphql", "~>1.9.18" # TODO 1.10.x breaks the app. Need to figure out why
-gem "graphql-batch", "~> 0.3.9"
-gem "graphql-guard"
+# UI
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'font-awesome-sass'
+gem "handles_sortable_columns", git: "https://github.com/dgreene53/handles_sortable_columns.git", ref: "rails-5"
+gem "scrollbar-rails"
 
-group :development do
-  # UI
-  gem "autoprefixer-rails"
-  gem "non-stupid-digest-assets" # also compile assets without digest (fixes font problem)
-  gem "uglifier"
+# Server
+#gem "thin", ">= 1.5.0"
+gem 'unicorn'
 
-  gem "better_errors"
-  gem "binding_of_caller", platforms: [:mri_21]
-  gem "hub", require: nil
-  gem "mail_view"
-  gem "rails_apps_pages"
-  gem "rails_apps_testing"
-  gem "rails_layout"
-  gem "rb-fchange", require: false
-  gem "rb-fsevent", require: false
-  gem "rb-inotify", require: false
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem "listen"
-  gem "rails-erd"
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem "spring"
-  gem "spring-commands-rspec"
-  gem "spring-watcher-listen"
-  gem "web-console", "~>3.7.0"
-end
+# Maintenance
+gem "turnout"
 
-group :development, :linter do
-  gem "rubocop", "~> 0.88.0"
-  gem "rubocop-performance", "~> 1.7.1"
-  gem "rubocop-rails", "~> 2.7.1"
-end
+# Users
+gem "devise", "~> 4.8.1"
+gem 'cancancan'
+gem "rolify", "~> 6.0.0"
+gem "simple_form", "~> 5.0.2"
+gem 'mailchimp-api', require: 'mailchimp'
+gem 'devise_masquerade'
+gem 'devise_invitable', '~> 2.0.6'
+gem "devise-two-factor" # TOTP for devise
+gem "rqrcode", "~> 2.1" # Generate QR codes for TOTP
 
-group :development, :build, :ci, :test do
-  # Assets
-  gem "sassc-rails"
-end
+#React
+gem 'react-rails'
+
+# JWT
+gem "jwt"
+
+# Payments
+gem "stripe", "~> 3.12.1"
+gem "stripe_event", "~> 2.1.1"
+
+#PDFs
+gem "prawn"
+gem "prawn_rails"
+
+gem "jquery-slick-rails"
+
+gem "aws-sdk-s3", require: false
+
+# Email
+gem "sendgrid-actionmailer"
+
+# Time
+gem "chronic"
+
+# Application Settings
+gem "figaro", ">= 0.7.0"
+
+gem "rollbar"
+
+gem "will_paginate", '~> 3.1.7'
+gem "activerecord-import", ">= 0.25.0"
+gem "ancestry"
+gem "friendly_id", "~> 5.0.4"
+gem 'activerecord-postgresql-adapter'
+
+# 3rd party login and integration
+gem 'omniauth', '~> 1.3'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-stripe-connect', "~> 2.10"
+gem 'twilio-ruby'
+
+# Assets
+gem 'sass-rails', '>= 3.2'
+gem 'uglifier', '>= 2.5.3'
+gem 'compass-rails'
+
+# node runtime for execjs
+gem "therubyracer"
+
+# calendar
+gem 'icalendar'
+
+#vCard
+gem 'vpim', :git => "https://github.com/dgreene53/vpim.git"
+
+# edi
+gem 'stupidedi'
+
+gem 'health_check'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', require: false
+
+# Job worker
+gem "que", "~> 0.14.3"
+
+# Google recaptcha to block automated bot
+gem "recaptcha"
 
 group :development, :test do
-  gem "byebug", platform: :mri
-  gem "debase"
-  gem "dotenv-rails"
+  gem 'byebug'
+  gem "rspec-rails", ">= 3.0.2"
   gem "factory_bot_rails"
-  gem "faker"
-  gem "guard-rspec", require: false
-  gem "rails-controller-testing"
-  gem "rspec-rails"
-  gem "ruby-debug-ide"
+  gem 'pry'
+  gem 'stripe-ruby-mock', '~> 2.5.3', require: 'stripe_mock'
+  gem 'shoulda-matchers'
+  gem "dotenv-rails"
 end
 
 group :test do
-  gem "capybara"
-  gem "database_cleaner"
-  gem "launchy"
-  gem "selenium-webdriver"
-  gem "shoulda-matchers"
+  gem "cucumber-rails", :require => false
+  gem "database_cleaner", "~> 1.7"
+  gem "rails-controller-testing"
+  gem "email_spec", ">= 1.6.0"
+  gem "launchy", ">= 2.4.2"
+  gem "capybara", ">= 2.4.1"
   gem "webmock"
 end
 
-### My Gems ###
+group :development do
+  gem "brakeman"
+  gem 'bullet'
+  gem 'uniform_notifier', '>= 1.10.0'
+  gem 'listen', '~> 3.1.0'
 
-group :development, :test do
-  gem "vcr"
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
 
-# Scorm cloud ruby client
-gem "scorm_cloud", git: "https://github.com/instructure/scorm-cloud.git"
+gem 'rails_12factor', group: :staging
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :development do
+  gem 'capistrano', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-shell',  require: false
+  gem 'capistrano-logtail',  require: false
+  gem 'capistrano-upload', require: false
+  gem 'capistrano-passenger', require: false
+  gem 'cap-ec2', git: "https://github.com/dgreene53/cap-ec2", require: false
+
+  # ed25519 ssh key support for deploying
+  gem "bcrypt_pbkdf"
+  gem "ed25519"
+end
+
+gem 'jbuilder', '~> 2.0'
+gem 'tinymce-rails', '~> 5.10'
+gem 'browser'
+gem 'nokogiri', '~> 1.13'
+gem 'rubyzip'
