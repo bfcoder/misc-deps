@@ -27,7 +27,7 @@ gem 'ejs'
 
 gem 'active_model_serializers', '~> 0.8.0'
 gem 'active_storage_base64'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'active_storage_validations'
 
 # UI
