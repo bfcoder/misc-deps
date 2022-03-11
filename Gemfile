@@ -4,7 +4,7 @@
 source 'https://rubygems.org'
 ruby "~>2.7"
 
-gem 'rails', '6.1.4.6'
+gem 'rails', '6.1.5'
 gem 'pg'
 gem "composite_primary_keys", "~> 13.0" # For que worker
 
@@ -27,7 +27,7 @@ gem 'ejs'
 
 gem 'active_model_serializers', '~> 0.8.0'
 gem 'active_storage_base64'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'active_storage_validations'
 
 # UI
