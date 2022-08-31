@@ -90,7 +90,7 @@ gem "friendly_id", "~> 5.0.4"
 gem 'activerecord-postgresql-adapter'
 
 # 3rd party login and integration
-gem 'omniauth', '~> 1.3'
+gem 'omniauth', '~> 1.9'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-stripe-connect', "~> 2.10"
 gem 'twilio-ruby'
