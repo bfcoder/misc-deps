@@ -15,7 +15,7 @@ gem 'dalli', git: "https://github.com/petergoldstein/dalli", ref: "ca8b286"
 gem 'pg_search'
 
 # Pdfs
-gem "pdfkit", "~> 0.8.4"
+gem "pdfkit", "~> 0.8.7"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 # Javascript
